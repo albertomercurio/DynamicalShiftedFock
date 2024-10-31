@@ -8,13 +8,14 @@ using CairoMakie
 # \makeatother
 # ```
 # to get the font size in points
-plot_figsize_width_pt = 380
-plot_figsize_height_pt = 200
+plot_figsize_width_two_columns_pt = 510
+plot_figsize_width_one_column_pt = 246
+plot_figsize_height_pt = 300
 
 my_theme_Cairo = Theme(
     fontsize = 9,
     figure_padding = (1,7,1,5),
-    size = (plot_figsize_width_pt, plot_figsize_height_pt),
+    size = (plot_figsize_width_one_column_pt, plot_figsize_height_pt),
     Axis = (
         spinewidth=0.7,
         xgridvisible=false,
@@ -39,5 +40,5 @@ my_theme_Cairo = Theme(
 my_theme_Cairo = merge(my_theme_Cairo, theme_latexfonts())
 
 CairoMakie.set_theme!(my_theme_Cairo)
-CairoMakie.activate!(type = "svg", pt_per_unit = 2)
+CairoMakie.activate!(type = "svg", pt_per_unit = 1.5)
 CairoMakie.enable_only_mime!(MIME"image/svg+xml"())
